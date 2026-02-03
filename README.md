@@ -53,9 +53,9 @@ You are free to use, modify, and distribute this code, provided you include the 
 
 **Eduard Zakharian**  
 R&D and Systems Consultant | Modeling, AI & Decision Support for Complex Systems  
-[LinkedIn](https://linkedin.com/in/eduard-zakharian) | eduard.zakharian@gmail.com
+[LinkedIn](https://www.linkedin.com/in/eduard-zakharian-606a8b398/) | eduard.zakharian@gmail.com
 
-> *"I design decision infrastructures for socio-technical futures — where engineering meets long-term thinking."*
+> *"I design decision infrastructures where engineering meets long-term thinking."*
 
 ---
 
