@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-class SolarIrradianceModel:
+class SolarIrradiance:
     def __init__(self, latitude, longitude):
         self.lat = latitude
         self.lon = longitude
@@ -15,31 +15,31 @@ class SolarIrradianceModel:
         ghi += np.random.normal(0, 50, len(ghi))
         return ghi
 
-class PVPowerModel:
+class PVPower:
     def __init__(self, pv_capacity_kW):
         self.capacity = pv_capacity_kW
     
     def power_from_irradiance(self, ghi):
         return self.capacity * (ghi / 1000.0)  # simple scaling
 
-class GenericElectrolyser:
+class Electrolyser:
     def __init__(self, min_power_kW, max_power_kW, efficiency_kg_per_kWh):
         self.min_p = min_power_kW
         self.max_p = max_power_kW
         self.eff = efficiency_kg_per_kWh
 
-class BatteryStorage:
+class Battery:
     def __init__(self, capacity_kWh, max_charge_kW, soc_init=0.5):
         self.capacity = capacity_kWh
         self.max_charge = max_charge_kW
         self.soc = soc_init
 
-class GridInterface:
+class Grid:
     def __init__(self, max_export_kW, max_import_kW):
         self.max_export = max_export_kW
         self.max_import = max_import_kW
 
-class MicrogridSystem:
+class Microgrid:
     def __init__(self, devices, load_profile, tariff_profile=None):
         self.devices = devices
         self.load = load_profile
