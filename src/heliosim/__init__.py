@@ -1,10 +1,7 @@
 __version__ = "0.1.0"
-
-from .core import (
-    Electrolyser,
-    Battery,
-    Grid,
-    PVPower,
-    Microgrid,
-    SolarIrradiance,
+__maintainer__ = ", ".join(
+    f"{name} <{email}>"
+    for (name, email) in [
+        ("HelioSim Authors", "eduard.zakharian@gmail.com"),
+    ]
 )

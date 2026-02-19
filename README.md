@@ -2,6 +2,8 @@
 
 An open framework for simulating socio-technical energy systems under uncertainty.
 
+Provides intelligent control and forecasting solutions for modern resilient energy systems. 
+
 ## Overview
 
 HelioSim is a generic, open simulation framework for modeling microgrids, renewable forecasting, and adaptive control strategies — without dependency on proprietary hardware or client-specific logic.

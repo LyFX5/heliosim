@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import Dict, List
-import devices
+
 
 class EnergyFlowSchema(ABC): ...
 
@@ -10,12 +10,12 @@ class SchemaA(EnergyFlowSchema):
     @classmethod
     def step(
         cls,
-        source: devices.Source,
-        load: devices.Load,
-        battery: devices.Battery,
-        electrolyzers: List[devices.Electrolyser],
-        # fuel_cell: devices.FuelCell,
-        utility_grid: devices.Grid,
+        source,
+        load,
+        battery,
+        electrolysers,
+        fuel_cell,
+        utility_grid,
     ):
         remaining_power = source.power
         if load is not None:
