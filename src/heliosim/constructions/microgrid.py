@@ -1,9 +1,38 @@
 import numpy as np
-import gymnasium as gym
-import sys
+from typing import Dict, List, Any
+import pandas as pd
 
-sys.modules["gym"] = gym
-from pymgrid import Microgrid
+from heliosim.devices import Device
+
+
+class Microgrid:
+
+    def __init__(self, devices: Dict[str, Device]):
+        self.devices = devices
+
+    def state(self) -> Dict[str, Any]:  # TODO implement alias to not miss any name
+        state = {"timestamp": self.devices["source"].timestamp}
+        for alias, device in self.devices.items():
+            state.update(device.state())
+        return state
+
+    def step(self, control: Dict[str, Any], dt: pd.Timedelta) -> None:
+        for alias, device in self.devices.items():
+            device.step(control[alias], dt)
+
+
+class EMS:
+
+    def __init__(self): ...
+
+    def control(self) -> Dict[str, Any]: ...
+
+    def step(self, microgrid_state: Dict[str, Any]) -> None: ...
+
+
+class Loop:
+
+    def __init__(self): ...
 
 
 class DemoMicrogrid:
